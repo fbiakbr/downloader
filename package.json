@@ -1,0 +1,19 @@
+{
+  "name": "downloader",
+  "version": "1.0.0",
+  "description": "test downloader",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "links": "node links.js",
+    "down": "node download.js"
+  },
+  "author": "Akira Weinberg",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "download": "^8.0.0",
+    "progress": "^2.0.3",
+    "request": "^2.88.2"
+  }
+}
