@@ -1,11 +1,11 @@
 const request = require('request');
 const cheerio = require('cheerio');
-const url = 'https://teddyinda.com/content/ktp/'
+const url = 'https://ppdb.smktelkom-lpg.sch.id/assets/img/berkas/berkas-kk/'
 
 request(url, (error, response, html) => {
     if (!error && response.statusCode == 200) {
         const $ = cheerio.load(html);
-        const links = $('a[href^="/content/ktp/"]');
+        const links = $('a[href^="/assets/img/berkas/berkas-kk/"]');
         const result = [];
         links.each(function () {
             result.push($(this).text());
@@ -17,7 +17,7 @@ request(url, (error, response, html) => {
             };
         });
         const fs = require('fs');
-        fs.writeFile('data.json', JSON.stringify(json, null, 4), (err) => {
+        fs.writeFile('kk.json', JSON.stringify(json, null, 4), (err) => {
             if (err) {
                 console.error(err);
                 return;

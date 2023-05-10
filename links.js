@@ -1,10 +1,10 @@
 const request = require('request');
-const url = 'https://teddyinda.com/content/ktp/';
+const url = 'https://ppdb.smktelkom-lpg.sch.id/assets/img/berkas/berkas-kk/';
 const cheerio = require('cheerio');
 
 request(url, (error, response, html) => {
     const $ = cheerio.load(html);
-    const links = $('a[href^="/content/ktp/"]');
+    const links = $('a[href^="/assets/img/berkas/berkas-kk/"]');
     const result = [];
     links.each(function () {
         result.push($(this).text());
